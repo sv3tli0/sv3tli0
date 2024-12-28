@@ -1,0 +1,15 @@
+{
+    "name": "sv3tli0/sv3tli0",
+    "description": "GitHub readme project for better personal readme",
+    "authors": [
+        {
+            "name": "Svetoslav Mutev",
+            "email": "svetoslav.mutev@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.8.2"
+    },
+    "prefer-stable": true,
+    "minimum-stability": "stable"
+}
