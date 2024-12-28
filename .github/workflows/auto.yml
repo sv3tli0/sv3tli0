@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - workflow-playground
   schedule:
     - cron: '15 */8 * * *'
 
