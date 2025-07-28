@@ -3,8 +3,8 @@
 ```
    ╔═══════════════════════════════════════════════════════════════╗
    ║                    SVETOSLAV MUTEV                            ║
-   ║              Senior Full-Stack Developer                      ║
-   ║                  PHP & JavaScript Wizard                      ║
+   ║               Senior Full-Stack Developer                     ║
+   ║                 PHP & JavaScript Wizard                       ║
    ╚═══════════════════════════════════════════════════════════════╝
 ```
 
