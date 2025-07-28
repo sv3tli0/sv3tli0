@@ -78,7 +78,10 @@ class SvetoslavMutev extends FullStackDeveloper
         return match($this->projectNeeds) {
             'scalability' => 'Microservices with Docker & K8s',
             'simplicity' => 'Well-structured Monolith',
-            'speed' => 'JAMstack with APIs',
+            'organization' => 'Monorepo with shared libraries',
+            'performance' => 'Optimized APIs with caching layers',
+            'reliability' => 'Event-driven with fault tolerance',
+            'modern_frontend' => 'JAMstack (when it fits)',
             default => 'Whatever serves users best'
         };
     }
