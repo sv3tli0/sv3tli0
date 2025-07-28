@@ -120,29 +120,14 @@ class SvetoslavMutev extends FullStackDeveloper
 }
 ```
 
-## 📡 Connect With Me
-
-<div align="center">
-
-```bash
-# Ready to collaborate? Let's connect!
-echo "Building amazing things together since 2012" 
-echo "Available for: Laravel • Vue.js • React • PHP • Node.js"
-echo "Contact: svetoslav.mutev@gmail.com"
-```
-
-📧 **Email:** svetoslav.mutev@gmail.com  
-📍 **Location:** Plovdiv, Bulgaria  
-💼 **LinkedIn:** [svetoslav-mutev](https://linkedin.com/in/svetoslav-mutev)
-
-*"Code is poetry written in a language machines understand"* ✨
-
-</div>
-
 ---
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=sv3tli0&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile Views" />
+
+*"Code is poetry written in a language machines understand"* ✨
+
+<img src="https://komarev.com/ghpvc/?username=sv3tli0&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile Views" />
 [![README build](https://github.com/sv3tli0/sv3tli0/actions/workflows/auto.yml/badge.svg)](https://github.com/sv3tli0/sv3tli0/actions/workflows/auto.yml)
+
 </div>
 
