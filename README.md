@@ -6,30 +6,30 @@
    ║               Senior Full-Stack Developer                ║
    ║                 PHP & JavaScript Wizard                  ║
    ╚══════════════════════════════════════════════════════════╝
-```
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/svetoslav-mutev)
-[![Website](https://img.shields.io/badge/Website-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://thecoffee.dev)
-
-## 🎮 Character Stats
-
-```yaml
-Level: Senior Developer (10+ years EXP)
-Class: Full-Stack Sorcerer
-Location: Plovdiv, Bulgaria 🇧🇬
-Languages: [Bulgarian (Native), English (C1)]
-Alignment: Chaotic Good
+   Level: Senior Developer (10+ years EXP)
+   Class: Full-Stack Sorcerer
+   Location: Plovdiv, Bulgaria 🇧🇬
+   Languages: [Bulgarian (Native), English (C1)]
+   Alignment: Chaotic Good
 ```
 
 ## 🛠️ Tech Stack & Skills
 
-| 🐘 **Backend** | 🏗️ **Architecture** | 🚀 **DevOps** |
-|:---:|:---:|:---:|
-| PHP (5.2 → 8.4) | Microservices | Docker |
-| Laravel (5→12) | Monolithic MVC | AWS/GCP |
-| Symfony (2→7) | REST APIs | GitLab CI/CD |
-| Node.js 14+ | Event-Driven | Kubernetes |
-| SQL Databases | Domain-Driven | GitHub Actions |
+| 🐘 **Backend** | 🎨 **Frontend** | 🏗️ **Architecture** | 🚀 **DevOps** |
+|:---:|:---------------:|:---:|:---:|
+| PHP (5.2 → 8.4) |     Vue.js      | Microservices | Docker |
+| Laravel (5→12) |      React      | Monolithic MVC | AWS/GCP |
+| Symfony (2→7) |    Alpine.js    | REST APIs | GitLab CI/CD |
+| Node.js 14+ |   TailwindCSS   | Event-Driven | Kubernetes |
+| SQL Databases |   SASS/SCSS   | Domain-Driven | GitHub Actions |
+
+
+## Automated updates:
+
+<!-- ### DAILY_UPDATE_START ### -->
+<!-- ### DAILY_UPDATE_END ### -->
+
 
 ## 🚀 Quest Log (Experience Points)
 
@@ -72,14 +72,11 @@ Alignment: Chaotic Good
 ```php
 <?php declare(strict_types=1);
 
-/**
- * Backend architecture and API design specialist
- */
 readonly class BackendArchitect
 {
     public function __construct(
-        private array $frameworks = ['Laravel', 'Symfony', 'Node.js'],
-        private array $databases = ['MySQL', 'PostgreSQL', 'Redis']
+        private(set) array $frameworks = ['Laravel', 'Symfony', 'Node.js'],
+        private(set) array $databases = ['MySQL', 'PostgreSQL', 'Redis'],
     ) {}
 
     public function chooseArchitecture(string $need): string
@@ -88,32 +85,25 @@ readonly class BackendArchitect
             'scalability' => 'Microservices with Docker & K8s',
             'performance' => 'Optimized APIs with caching layers',
             'organization' => 'Monorepo with shared libraries',
-            default => 'Well-structured Monolith'
+            default => 'Well-structured Monolith with extractable services'
         };
     }
 }
 
-/**
- * Frontend development with focus on user experience
- */
 readonly class FrontendCraftsman
 {
     public function getPreferredStack(): array
     {
         return [
             'frameworks' => ['Vue.js', 'React', 'Alpine.js'],
-            'styling' => ['TailwindCSS', 'Bootstrap', 'CSS Grid'],
+            'styling' => ['SASS/SCSS', 'Modern CSS3', 'TailwindCSS', 'CSS Grid/Flexbox'],
             'philosophy' => 'User experience > fancy animations'
         ];
     }
 }
 
-/**
- * DevOps and deployment automation specialist
- */
 readonly class DevOpsEngineer
 {
-    #[Pure]
     public function getWorkflow(): array
     {
         return [
@@ -125,22 +115,24 @@ readonly class DevOpsEngineer
     }
 }
 
-// Initialize the full-stack developer
-$svetoslav = new class extends BackendArchitect {
-    use FrontendCraftsman, DevOpsEngineer;
-    
-    public readonly string $location = 'Plovdiv, Bulgaria';
-    public readonly int $experienceYears = 10;
-    
-    public function codingPrinciples(): array
-    {
-        return [
-            'Clean Code > Clever Code',
-            'Balance Business Needs with Technical Excellence',
-            'Performance Matters, Security by Design'
-        ];
-    }
+$svetoslav = new readonly class (
+    backend: new BackendArchitect,
+    frontend: new FrontendCraftsman,
+    devOp: new DevOpsEngineer,
+    location: 'Plovdiv, Bulgaria (REMOTE)',
+    yearsOfExperience: 13,
+    availability: new DateTimeImmutable()->add(new DateInterval('P1W')),
+){
+    public function __construct (
+        private(set) BackendArchitect $backend,
+        private(set) FrontendCraftsman $frontend,
+        private(set) DevOpsEngineer $devOp,
+        private(set) string $location,
+        private(set) int $yearsOfExperience,
+        private(set) DateTimeImmutable $availability,
+    ) {}
 };
+// ...
 ```
 
 ---
