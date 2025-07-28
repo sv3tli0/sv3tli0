@@ -85,7 +85,7 @@
 - 🇸🇪 **Comstream** `[2014-2015]`: Built Swedish hosting platform (still running after 10 years! 🎉)
 - 🚀 **Rezon Media** `[2012-2013]`: Started professional journey on Bulgaria's largest websites
 
-## 🏗️ Development Philosophy
+## 🧙‍♂️ Developer Toolkit
 
 ```php
 <?php declare(strict_types=1);
