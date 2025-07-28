@@ -5,13 +5,6 @@ on:
     # GitHub Actions uses UTC, so we use 5:30 for winter time ± 7:30 at Sofia
     - cron: '30 5 * * *'
   
-  push:
-    branches:
-      - main
-    paths-ignore:
-      # Don't trigger if only README.md was changed - prevents infinite loops !!!
-      - 'README.md'
-
   # Allow manual trigger for testing
   workflow_dispatch:
 
@@ -61,8 +54,6 @@ jobs:
           # Determine trigger type for commit message
           if [ "${{ github.event_name }}" = "schedule" ]; then
             TRIGGER="🕰️ Scheduled daily update"
-          elif [ "${{ github.event_name }}" = "push" ]; then
-            TRIGGER="🚀 Triggered by push to main"
           else
             TRIGGER="🔧 Manual trigger"
           fi
