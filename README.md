@@ -8,7 +8,6 @@
    ╚══════════════════════════════════════════════════════════╝
 ```
 
-[![README build](https://github.com/sv3tli0/sv3tli0/actions/workflows/auto.yml/badge.svg)](https://github.com/sv3tli0/sv3tli0/actions/workflows/auto.yml)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/svetoslav-mutev)
 [![Website](https://img.shields.io/badge/Website-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://thecoffee.dev)
 
@@ -144,4 +143,6 @@ echo "Contact: svetoslav.mutev@gmail.com"
 
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=sv3tli0&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile Views" />
+[![README build](https://github.com/sv3tli0/sv3tli0/actions/workflows/auto.yml/badge.svg)](https://github.com/sv3tli0/sv3tli0/actions/workflows/auto.yml)
 </div>
+
