@@ -27,7 +27,7 @@ Alignment: Chaotic Good
 | 🐘 **Backend** | 🏗️ **Architecture** | 🚀 **DevOps** |
 |:---:|:---:|:---:|
 | PHP (5.2 → 8.4) | Microservices | Docker |
-| Laravel (5→11) | Monolithic MVC | AWS/GCP |
+| Laravel (5→12) | Monolithic MVC | AWS/GCP |
 | Symfony (2→7) | REST APIs | GitLab CI/CD |
 | Node.js 14+ | Event-Driven | Kubernetes |
 | SQL Databases | Domain-Driven | GitHub Actions |
