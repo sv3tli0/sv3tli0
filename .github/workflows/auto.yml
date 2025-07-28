@@ -17,7 +17,5 @@ jobs:
       with:
         php-version: '8.4'
     - uses: actions/checkout@v4
-    - name: Install Dependencies
-      run: composer install --no-interaction --no-scripts --prefer-dist
     - name: Execute script
       run: php updateReadme.php
