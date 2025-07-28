@@ -27,12 +27,12 @@ Alignment: Chaotic Good
 ### 🛠️ My Arsenal
 
 ```
-┌─── Backend Spells ───┐  ┌─── Frontend Magic ───┐  ┌─── DevOps Tools ───┐
-│ 🐘 PHP (5.2 → 8.4)   │  │ ⚡ JavaScript/ES6+   │  │ 🐳 Docker          │
-│ 🎼 Laravel (5→11)    │  │ 🖖 Vue.js            │  │ ☁️  AWS/GCP         │
-│ 🎵 Symfony (2→7)     │  │ ⚛️  React.js          │  │ 🔄 GitLab CI/CD    │
-│ 🟢 Node.js 14+       │  │ 🎨 TailwindCSS       │  │ ☸️  Kubernetes      │
-│ 🗃️  SQL Databases     │  │ 📱 Bootstrap         │  │ 📊 GitHub Actions  │
+┌─── Backend Spells ───┐  ┌─── Architecture ─────┐  ┌─── DevOps Tools ───┐
+│ 🐘 PHP (5.2 → 8.4)   │  │ 🏗️  Microservices    │  │ 🐳 Docker          │
+│ 🎼 Laravel (5→11)    │  │ 🏛️  Monolithic MVC    │  │ ☁️  AWS/GCP         │
+│ 🎵 Symfony (2→7)     │  │ 🔌 REST APIs         │  │ 🔄 GitLab CI/CD    │
+│ 🟢 Node.js 14+       │  │ ⚡ Event-Driven      │  │ ☸️  Kubernetes      │
+│ 🗃️  SQL Databases    │  │ 🧩 Domain-Driven     │  │ 📊 GitHub Actions  │
 └─────────────────────┘  └─────────────────────┘  └───────────────────┘
 ```
 
@@ -118,6 +118,7 @@ class SvetoslavMutev extends FullStackDeveloper
         return [
             'Clean Code > Clever Code',
             'User Experience First',
+            'Balance Business Needs with Technical Excellence',
             'Performance Matters',
             'Security by Design',
             'Test Everything Important'
@@ -131,11 +132,10 @@ class SvetoslavMutev extends FullStackDeveloper
 <div align="center">
 
 ```bash
-# Let's build something amazing together!
-git clone https://github.com/sv3tli0/awesome-projects.git
-cd awesome-projects
-composer install && npm install
-./start-collaboration.sh
+# Ready to collaborate? Let's connect!
+echo "Building amazing things together since 2012" 
+echo "Available for: Laravel • Vue.js • React • PHP • Node.js"
+echo "Contact: svetoslav.mutev@gmail.com"
 ```
 
 📧 **Email:** svetoslav.mutev@gmail.com  
