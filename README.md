@@ -67,95 +67,79 @@ Alignment: Chaotic Good
 - 🇸🇪 **Comstream** `[2014-2015]`: Built Swedish hosting platform (still running after 10 years! 🎉)
 - 🚀 **Rezon Media** `[2012-2013]`: Started professional journey on Bulgaria's largest websites
 
-## 🏗️ Architecture Philosophy
+## 🏗️ Development Philosophy
 
 ```php
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 /**
- * Senior Full-Stack Developer Profile
- * 
- * @author Svetoslav Mutev
- * @version 2.0
- * @since PHP 8.4
+ * Backend architecture and API design specialist
  */
-readonly class SvetoslavMutev extends FullStackDeveloper
+readonly class BackendArchitect
 {
     public function __construct(
-        private string $location = 'Plovdiv, Bulgaria',
-        private int $experienceYears = 10,
-        private array $preferredStack = ['PHP', 'Laravel', 'Vue.js', 'Docker']
-    ) {
-        parent::__construct($this->experienceYears);
-    }
+        private array $frameworks = ['Laravel', 'Symfony', 'Node.js'],
+        private array $databases = ['MySQL', 'PostgreSQL', 'Redis']
+    ) {}
 
-    /**
-     * Determines optimal architecture based on project requirements
-     * 
-     * @param string $projectNeeds The primary project requirement
-     * @return string Architecture recommendation
-     */
-    public function getArchitectureStyle(string $projectNeeds = 'balanced'): string 
+    public function chooseArchitecture(string $need): string
     {
-        return match($projectNeeds) {
+        return match($need) {
             'scalability' => 'Microservices with Docker & K8s',
-            'simplicity' => 'Well-structured Monolith',
-            'organization' => 'Monorepo with shared libraries',
             'performance' => 'Optimized APIs with caching layers',
-            'reliability' => 'Event-driven with fault tolerance',
-            'modern_frontend' => 'JAMstack (when it fits)',
-            default => 'Whatever serves users best'
+            'organization' => 'Monorepo with shared libraries',
+            default => 'Well-structured Monolith'
         };
     }
+}
+
+/**
+ * Frontend development with focus on user experience
+ */
+readonly class FrontendCraftsman
+{
+    public function getPreferredStack(): array
+    {
+        return [
+            'frameworks' => ['Vue.js', 'React', 'Alpine.js'],
+            'styling' => ['TailwindCSS', 'Bootstrap', 'CSS Grid'],
+            'philosophy' => 'User experience > fancy animations'
+        ];
+    }
+}
+
+/**
+ * DevOps and deployment automation specialist
+ */
+readonly class DevOpsEngineer
+{
+    #[Pure]
+    public function getWorkflow(): array
+    {
+        return [
+            'containers' => 'Docker + Kubernetes',
+            'cicd' => 'GitLab CI/CD + GitHub Actions',
+            'cloud' => 'AWS/GCP with infrastructure as code',
+            'monitoring' => 'Performance metrics & error tracking'
+        ];
+    }
+}
+
+// Initialize the full-stack developer
+$svetoslav = new class extends BackendArchitect {
+    use FrontendCraftsman, DevOpsEngineer;
     
-    /**
-     * Core development principles I follow
-     * 
-     * @return array<string> List of coding principles
-     */
-    public function codingPrinciples(): array 
+    public readonly string $location = 'Plovdiv, Bulgaria';
+    public readonly int $experienceYears = 10;
+    
+    public function codingPrinciples(): array
     {
         return [
             'Clean Code > Clever Code',
-            'User Experience First',
             'Balance Business Needs with Technical Excellence',
-            'Performance Matters',
-            'Security by Design',
-            'Test Everything Important'
+            'Performance Matters, Security by Design'
         ];
     }
-
-    #[Pure]
-    public function getAvailableForHire(): bool
-    {
-        return true; // Always open to interesting opportunities
-    }
-}
-```
-
-## 🎯 Development Approach
-
-```javascript
-const developmentPhilosophy = {
-  backend: {
-    frameworks: ['Laravel', 'Symfony', 'Node.js'],
-    databases: ['MySQL', 'PostgreSQL', 'Redis'],
-    architecture: ['Microservices', 'REST APIs', 'Event-Driven']
-  },
-  
-  frontend: {
-    preferred: ['Vue.js', 'React', 'Alpine.js'],
-    styling: ['TailwindCSS', 'Bootstrap', 'CSS Grid/Flexbox'],
-    mindset: 'User experience over fancy animations'
-  },
-  
-  workflow: {
-    testing: 'Write tests that matter',
-    deployment: 'Docker + CI/CD automation',
-    monitoring: 'Performance and error tracking'
-  }
 };
 ```
 
