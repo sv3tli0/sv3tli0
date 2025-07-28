@@ -68,29 +68,6 @@ Alignment: Chaotic Good
 - 🇸🇪 **Comstream** `[2014-2015]`: Built Swedish hosting platform (still running after 10 years! 🎉)
 - 🚀 **Rezon Media** `[2012-2013]`: Started professional journey on Bulgaria's largest websites
 
-## 🎨 Frontend Superpowers
-
-```css
-.my-skills {
-  display: flex;
-  flex-direction: awesome;
-  justify-content: space-between;
-  align-items: center;
-  
-  --html: semantic-expert;
-  --css: grid-flexbox-master;
-  --js: es6-plus-ninja;
-  --frameworks: vue-react-wizard;
-  --responsive: mobile-first-guru;
-  --performance: optimization-sensei;
-}
-
-/* Responsive across all devices and browsers */
-@media (max-width: 768px) {
-  .my-skills { flex-wrap: wrap; }
-}
-```
-
 ## 🏗️ Architecture Philosophy
 
 ```php
@@ -121,6 +98,29 @@ class SvetoslavMutev extends FullStackDeveloper
 }
 ```
 
+## 🎨 Frontend Superpowers
+
+```css
+.my-skills {
+  display: flex;
+  flex-direction: awesome;
+  justify-content: space-between;
+  align-items: center;
+  
+  --html: semantic-expert;
+  --css: grid-flexbox-master;
+  --js: es6-plus-ninja;
+  --frameworks: vue-react-wizard;
+  --responsive: mobile-first-guru;
+  --performance: optimization-sensei;
+}
+
+/* Responsive across all devices and browsers */
+@media (max-width: 768px) {
+  .my-skills { flex-wrap: wrap; }
+}
+```
+
 ## 📡 Connect With Me
 
 <div align="center">
@@ -133,7 +133,6 @@ echo "Contact: svetoslav.mutev@gmail.com"
 ```
 
 📧 **Email:** svetoslav.mutev@gmail.com  
-🌐 **Website:** [thecoffee.dev](https://thecoffee.dev)  
 📍 **Location:** Plovdiv, Bulgaria  
 💼 **LinkedIn:** [svetoslav-mutev](https://linkedin.com/in/svetoslav-mutev)
 
