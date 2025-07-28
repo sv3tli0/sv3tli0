@@ -2,9 +2,9 @@
 
 ```
    ╔═══════════════════════════════════════════════════════════════╗
-   ║                    SVETOSLAV MUTEV                           ║
-   ║              Senior Full-Stack Developer                     ║
-   ║                  PHP & JavaScript Wizard                     ║
+   ║                    SVETOSLAV MUTEV                            ║
+   ║              Senior Full-Stack Developer                      ║
+   ║                  PHP & JavaScript Wizard                      ║
    ╚═══════════════════════════════════════════════════════════════╝
 ```
 
