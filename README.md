@@ -146,4 +146,3 @@ $svetoslav = new readonly class (
 [![README build](https://github.com/sv3tli0/sv3tli0/actions/workflows/auto.yml/badge.svg)](https://github.com/sv3tli0/sv3tli0/actions/workflows/auto.yml)
 
 </div>
-
