@@ -71,11 +71,35 @@ Alignment: Chaotic Good
 
 ```php
 <?php
-class SvetoslavMutev extends FullStackDeveloper 
+
+declare(strict_types=1);
+
+/**
+ * Senior Full-Stack Developer Profile
+ * 
+ * @author Svetoslav Mutev
+ * @version 2.0
+ * @since PHP 8.4
+ */
+readonly class SvetoslavMutev extends FullStackDeveloper
 {
-    public function getArchitectureStyle(): string 
+    public function __construct(
+        private string $location = 'Plovdiv, Bulgaria',
+        private int $experienceYears = 10,
+        private array $preferredStack = ['PHP', 'Laravel', 'Vue.js', 'Docker']
+    ) {
+        parent::__construct($this->experienceYears);
+    }
+
+    /**
+     * Determines optimal architecture based on project requirements
+     * 
+     * @param string $projectNeeds The primary project requirement
+     * @return string Architecture recommendation
+     */
+    public function getArchitectureStyle(string $projectNeeds = 'balanced'): string 
     {
-        return match($this->projectNeeds) {
+        return match($projectNeeds) {
             'scalability' => 'Microservices with Docker & K8s',
             'simplicity' => 'Well-structured Monolith',
             'organization' => 'Monorepo with shared libraries',
@@ -86,6 +110,11 @@ class SvetoslavMutev extends FullStackDeveloper
         };
     }
     
+    /**
+     * Core development principles I follow
+     * 
+     * @return array<string> List of coding principles
+     */
     public function codingPrinciples(): array 
     {
         return [
@@ -96,6 +125,12 @@ class SvetoslavMutev extends FullStackDeveloper
             'Security by Design',
             'Test Everything Important'
         ];
+    }
+
+    #[Pure]
+    public function getAvailableForHire(): bool
+    {
+        return true; // Always open to interesting opportunities
     }
 }
 ```
