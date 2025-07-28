@@ -11,7 +11,7 @@ on:
     paths-ignore:
       # Don't trigger if only README.md was changed - prevents infinite loops !!!
       - 'README.md'
-  
+
   # Allow manual trigger for testing
   workflow_dispatch:
 
@@ -42,9 +42,12 @@ jobs:
       - name: Check for changes
         id: verify-changed-files
         run: |
+          git status --porcelain
           if [ -n "$(git status --porcelain)" ]; then
+            echo "✅ Changes detected"
             echo "changed=true" >> $GITHUB_OUTPUT
           else
+            echo "ℹ️ No changes detected"
             echo "changed=false" >> $GITHUB_OUTPUT
           fi
           
@@ -76,4 +79,6 @@ jobs:
           
       - name: No changes detected
         if: steps.verify-changed-files.outputs.changed == 'false'
-        run: echo "ℹ️ No changes to commit"
+        run: |
+          echo "ℹ️ No changes to commit - profile is already up to date"
+          echo "This is normal behavior and not an error"
