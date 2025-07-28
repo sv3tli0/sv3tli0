@@ -22,21 +22,15 @@ Languages: [Bulgarian (Native), English (C1)]
 Alignment: Chaotic Good
 ```
 
-<div align="center">
+## 🛠️ Tech Stack & Skills
 
-### 🛠️ My Arsenal
-
-```
-┌─── Backend Spells ───┐  ┌─── Architecture ─────┐  ┌─── DevOps Tools ───┐
-│ 🐘 PHP (5.2 → 8.4)   │  │ 🏗️  Microservices    │  │ 🐳 Docker          │
-│ 🎼 Laravel (5→11)    │  │ 🏛️  Monolithic MVC    │  │ ☁️  AWS/GCP         │
-│ 🎵 Symfony (2→7)     │  │ 🔌 REST APIs         │  │ 🔄 GitLab CI/CD    │
-│ 🟢 Node.js 14+       │  │ ⚡ Event-Driven      │  │ ☸️  Kubernetes      │
-│ 🗃️  SQL Databases    │  │ 🧩 Domain-Driven     │  │ 📊 GitHub Actions  │
-└─────────────────────┘  └─────────────────────┘  └───────────────────┘
-```
-
-</div>
+| 🐘 **Backend** | 🏗️ **Architecture** | 🚀 **DevOps** |
+|:---:|:---:|:---:|
+| PHP (5.2 → 8.4) | Microservices | Docker |
+| Laravel (5→11) | Monolithic MVC | AWS/GCP |
+| Symfony (2→7) | REST APIs | GitLab CI/CD |
+| Node.js 14+ | Event-Driven | Kubernetes |
+| SQL Databases | Domain-Driven | GitHub Actions |
 
 ## 🚀 Quest Log (Experience Points)
 
