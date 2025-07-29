@@ -161,6 +161,6 @@ $svetoslav = new readonly class (
 
 <img src="https://komarev.com/ghpvc/?username=sv3tli0&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile Views" />
 
-[![README build](https://github.com/sv3tli0/sv3tli0/actions/workflows/auto.yml/badge.svg)](https://github.com/sv3tli0/sv3tli0/actions/workflows/auto.yml)
+[![README build](https://github.com/sv3tli0/sv3tli0/actions/workflows/update-profile.yml/badge.svg)](https://github.com/sv3tli0/sv3tli0/actions/workflows/update-profile.yml)
 
 </div>
