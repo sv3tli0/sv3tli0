@@ -1,9 +1,12 @@
-name: Daily Profile Updater
+name: Profile Updater
 
 on:
   schedule:
-    # GitHub Actions uses UTC, so we use 5:30 for winter time ± 7:30 at Sofia
+    # Run every 6 hours - keeps content fresh throughout the day
     - cron: '30 5 * * *'
+    - cron: '30 11 * * *'
+    - cron: '30 17 * * *'
+    - cron: '30 23 * * *'
   
   push:
     branches:
@@ -61,7 +64,7 @@ jobs:
           
           # Determine trigger type for commit message
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            TRIGGER="🕰️ Scheduled daily update"
+            TRIGGER="🕰️ Scheduled update"
           elif [ "${{ github.event_name }}" = "push" ]; then
             TRIGGER="🚀 Triggered by push to main"
           else
