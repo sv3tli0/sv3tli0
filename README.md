@@ -8,7 +8,7 @@
    ╔══════════════════════════════════════════════════════════╗
    ║                    SVETOSLAV MUTEV                       ║
    ║               Senior Full-Stack Developer                ║
-   ║             AI-Augmented PHP & JS Engineer                ║
+   ║             AI-Augmented PHP & JS Engineer               ║
    ╚══════════════════════════════════════════════════════════╝
 
    Level: Senior Developer (14+ years EXP)
