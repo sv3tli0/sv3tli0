@@ -50,25 +50,50 @@ readonly class DevOpsEngineer
     }
 }
 
+readonly class AIIntegrator
+{
+    public function __construct(
+        private(set) array $codingTools = ['Claude Code', 'Cursor IDE', 'GitHub Copilot'],
+        private(set) array $llmApis = ['Anthropic Claude', 'OpenAI GPT', 'Local LLMs'],
+        private(set) array $infrastructure = ['MCP Servers', 'AI Agents', 'Prompt Engineering'],
+    ) {}
+
+    public function augmentWorkflow(string $task): string
+    {
+        return match($task) {
+            'coding' => 'Claude Code + Cursor IDE for AI-assisted development',
+            'review' => 'AI-powered code review with contextual analysis',
+            'architecture' => 'LLM-assisted design decisions and documentation',
+            'testing' => 'AI-generated test cases with edge case discovery',
+            'debugging' => 'Intelligent error analysis and fix suggestions',
+            default => 'Human expertise enhanced by AI capabilities'
+        };
+    }
+}
+
 $svetoslav = new readonly class (
     backend: new BackendArchitect,
     frontend: new FrontendCraftsman,
     devOp: new DevOpsEngineer,
+    ai: new AIIntegrator,
     location: 'Plovdiv, Bulgaria (REMOTE)',
-    yearsOfExperience: 13,
+    yearsOfExperience: 14,
     availability: new DateTimeImmutable()->add(new DateInterval('P1W')),
 ){
     public function __construct (
         private(set) BackendArchitect $backend,
         private(set) FrontendCraftsman $frontend,
         private(set) DevOpsEngineer $devOp,
+        private(set) AIIntegrator $ai,
         private(set) string $location,
         private(set) int $yearsOfExperience,
         private(set) DateTimeImmutable $availability,
     ) {}
 };
 
-// Piece of art until now! Next we do some bullshit to make that profile updater working. :)
+// ═══════════════════════════════════════════════════════════
+// Dynamic content generator - updates README.md daily
+// ═══════════════════════════════════════════════════════════
 
 /*
  * Dynamic content that could be updated daily
@@ -96,7 +121,7 @@ readonly class DynamicContent
         }
         
         $workFocuses = [
-            'Deep diving into Laravel 11 performance optimizations',
+            'Deep diving into Laravel 12 performance optimizations',
             'Mastering Vue 3 Composition API with TypeScript',
             'Exploring Symfony 7 new features and improvements',
             'Docker multi-stage builds for PHP applications',
@@ -107,7 +132,15 @@ readonly class DynamicContent
             'Vue.js SSR with Nuxt.js architecture patterns',
             'Symfony Messenger for async task processing',
             'PHP 8.4 property hooks and new features',
-            'Event-driven architecture with Laravel Events'
+            'Event-driven architecture with Laravel Events',
+            'Building custom MCP servers for AI-enhanced workflows',
+            'Claude Code sessions for complex refactoring tasks',
+            'Integrating LLM APIs into production applications',
+            'AI agent orchestration for automated development pipelines',
+            'Cursor IDE AI-assisted pair programming sessions',
+            'Prompt engineering for reliable code generation',
+            'AI-powered code review and quality analysis',
+            'Building intelligent development automation tools'
         ];
         
         $dayOfYear = (int)$this->currentDate->format('z');
@@ -163,6 +196,16 @@ readonly class DynamicContent
             "🎨 CSS: `clamp()` function provides responsive values without media queries",
             "🎨 CSS: `@layer` directive controls cascade order across stylesheets",
             
+            // AI & LLM Tips
+            "🤖 AI: Claude Code excels at complex multi-file refactoring with full codebase context",
+            "🤖 AI: MCP servers let you extend AI assistants with custom tools and data sources",
+            "🤖 AI: Use structured outputs (JSON mode) for reliable LLM API integrations",
+            "🤖 AI: Cursor IDE's composer mode handles multi-file changes with AI precision",
+            "🤖 AI: Prompt engineering tip - provide examples and constraints for consistent output",
+            "🤖 AI: GitHub Copilot shines for boilerplate code and repetitive patterns",
+            "🤖 AI: AI code review catches subtle bugs that manual review often misses",
+            "🤖 AI: Chain AI agents for complex workflows - decompose, delegate, synthesize",
+
             // General Tips
             "🔒 Security: Always sanitize user input, even from 'trusted' sources",
             "⚡ Performance: Use database indexes on columns used in WHERE clauses",
@@ -205,6 +248,7 @@ readonly class ProfileGenerator
         $content .= "**📍 Location:** {$this->svetoslav->location}  " . PHP_EOL;
         $content .= "**⏱️ Experience:** " . number_format($this->dynamic->getExperienceDays()) . " days of coding  " . PHP_EOL;
         $content .= "**🎯 Current Focus:** {$this->dynamic->getCurrentFocus()}  " . PHP_EOL;
+        $content .= "**🤖 AI Tools:** " . implode(', ', $this->svetoslav->ai->codingTools) . "  " . PHP_EOL;
         $content .= "**📅 Available:** {$this->svetoslav->availability->format('M j, Y')}  " . PHP_EOL . PHP_EOL;
         
         $content .= "### 🏗️ Architecture Approach" . PHP_EOL;
@@ -231,6 +275,7 @@ readonly class ProfileGenerator
         $output .= "📍 **Location:** {$this->svetoslav->location}" . PHP_EOL;
         $output .= "⏱️  **Experience:** " . number_format($this->dynamic->getExperienceDays()) . " days of crafting code" . PHP_EOL;
         $output .= "🎯 **Current Focus:** {$this->dynamic->getCurrentFocus()}" . PHP_EOL;
+        $output .= "🤖 **AI Tools:** " . implode(', ', $this->svetoslav->ai->codingTools) . PHP_EOL;
         $output .= "📅 **Available:** {$this->svetoslav->availability->format('M j, Y')}" . PHP_EOL . PHP_EOL;
 
         $output .= "🏗️  **Architecture Expertise:**" . PHP_EOL;
