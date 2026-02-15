@@ -38,26 +38,13 @@
 | Node.js 14+ | TailwindCSS | Event-Driven | Kubernetes | LLM APIs |
 | SQL Databases | SASS/SCSS | Domain-Driven | GitHub Actions | MCP Servers |
 
-## 🤖 AI & Intelligent Development
+## 🤖 AI-Augmented Development
 
-### AI Coding Toolkit
-
-| Tool | Usage |
-|:---|:---|
-| **Claude Code** | Deep codebase refactoring, multi-file changes, architectural analysis |
-| **Cursor IDE** | AI-assisted pair programming, inline completions, composer mode |
-| **GitHub Copilot** | Boilerplate generation, repetitive patterns, test scaffolding |
-
-### LLM Integration & Infrastructure
-- **API Integration:** Building production applications with Anthropic Claude & OpenAI APIs
-- **MCP Servers:** Custom Model Context Protocol servers for AI-enhanced development workflows
-- **AI Agents:** Orchestrating intelligent agents for automated development pipelines
-- **Prompt Engineering:** Crafting reliable prompts with structured outputs for consistent results
-
-### AI-Augmented Workflow
-- **Development Environment:** AI tools integrated across IDE, terminal, and code review
-- **AI Code Review:** Automated quality analysis catching subtle bugs and security issues
-- **Intelligent Automation:** AI-powered scripts for repetitive tasks and documentation generation
+| Tool | Usage | Infrastructure |
+|:---|:---|:---|
+| **Claude Code** | Codebase refactoring, multi-file changes, architectural analysis | **MCP Servers** - Custom tools for AI workflows |
+| **Cursor IDE** | AI pair programming, inline completions, composer mode | **LLM APIs** - Anthropic Claude & OpenAI integrations |
+| **GitHub Copilot** | Boilerplate generation, repetitive patterns, test scaffolding | **AI Agents** - Automated pipelines & code review |
 
 ## Automated updates:
 
@@ -87,95 +74,36 @@
 ## 🚀 Quest Log (Experience Points)
 
 ### 🏆 **Current Quest** - Frosko Ltd `[2025-Present]`
-> **Role:** Founder & Senior Full-Stack Developer (Contract-Based)
-- 🏢 Running my own company, delivering contract-based full-stack solutions
-- 🤖 Building AI-augmented development workflows with Claude Code & Cursor IDE
-- 🔗 Developing custom MCP servers for enhanced AI assistant capabilities
-- 🧠 Integrating LLM APIs into production Laravel & Node.js applications
-- ⚡ Leveraging AI agents for automated code review and quality analysis
-- 🚀 Specializing in AI-enhanced software delivery for diverse clients
+> **Founder & Senior Full-Stack Developer** — Contract-based AI-enhanced software delivery
+- 🤖 AI-augmented workflows with Claude Code, Cursor IDE & custom MCP servers
+- 🧠 LLM API integrations in production Laravel & Node.js applications
+- 🚀 AI agents for automated code review, testing & development pipelines
 
-### ⚔️ **Legendary Quest** - Peoplefone AG `[2023-2024]`
-> **Role:** Senior Full-Stack Developer (Remote Ninja 🥷)
-- 🔧 Maintained 2 monolithic beasts while taming microservices
-- 🎯 Solo remote warrior in hybrid team across Europe
-- ⚡ Mastered Laravel + Vue.js + Node.js trinity
-- 🗣️ Participated in epic technical discussions & architectural battles
+<details>
+<summary><b>⚔️ Previous Quests</b> (click to expand)</summary>
 
-### 🚗 **Side Quest** - Parkos BV `[2021-2022]`
-> **Role:** Senior Full-Stack Developer (Parking Platform Hero)
-- 🅿️ Built parking rental platform with Laravel & Vue.js magic
-- 🔄 Guided team through Laravel → JavaScript microservices migration
-- 🌍 Remote collaboration champion across European timezones
-- 📈 Improved scalability & maintainability through architectural wizardry
+**Peoplefone AG** `[2023-2024]` — Senior Full-Stack Developer (Remote 🥷)
+> Monolith maintenance & microservices migration · Laravel + Vue.js + Node.js · Solo remote in hybrid EU team
 
-### 🛍️ **Epic Quest** - vConnect Ltd `[2019-2020]`
-> **Role:** Senior PHP Developer (E-commerce Architect)
-- 🏪 Designed architecture for rapid online store creation
-- 📊 Built monitoring dashboard with Vue.js + Bootstrap
-- 🌐 Enabled access to millions of products across multiple markets
-- 🗣️ Mastered multi-language & multi-market complexities
+**Parkos BV** `[2021-2022]` — Senior Full-Stack Developer
+> Parking rental platform · Laravel → JS microservices migration · Remote EU collaboration
 
-### ⚔️ **Boss Battle** - Droxic Ltd `[2017-2018]`
-> **Role:** Mid/Senior PHP Developer (Multi-Client Warrior)
-- 🎯 Juggled diverse projects: Symfony, WordPress, Drupal, Magento
-- 🏈 Worked with clients from football teams to BMW & Doctors Without Borders
-- 💪 Leveled up adaptation skills but learned burnout management lessons
-- 🔄 Master of rapid task switching & stack adaptation
+**vConnect Ltd** `[2019-2020]` — Senior PHP Developer
+> E-commerce architecture · Vue.js monitoring dashboard · Multi-language & multi-market
 
-### 🎪 **Training Arc** - Multiple Adventures `[2012-2016]`
-> **Roles:** From Junior to PHP Developer
-- 🌱 **Circles Bulgaria** `[2015-2016]`: Grew teamwork & project skills
-- 🇸🇪 **Comstream** `[2014-2015]`: Built Swedish hosting platform (still running after 10 years! 🎉)
-- 🚀 **Rezon Media** `[2012-2013]`: Started professional journey on Bulgaria's largest websites
+**Droxic Ltd** `[2017-2018]` — Mid/Senior PHP Developer
+> Symfony, WordPress, Drupal, Magento · Clients: BMW, Doctors Without Borders · Rapid stack adaptation
 
-## 🧙‍♂️ Developer Toolkit
+**Training Arc** `[2012-2016]` — Junior → PHP Developer
+> Circles Bulgaria · Comstream (Swedish hosting, still running! 🎉) · Rezon Media (Bulgaria's largest websites)
+
+</details>
+
+<details>
+<summary><b>🧙‍♂️ Developer Toolkit</b> — PHP 8.5 executable profile (click to expand)</summary>
 
 ```php
 <?php declare(strict_types=1);
-
-readonly class BackendArchitect
-{
-    public function __construct(
-        private(set) array $frameworks = ['Laravel', 'Symfony', 'Node.js'],
-        private(set) array $databases = ['MySQL', 'PostgreSQL', 'Redis'],
-    ) {}
-
-    public function chooseArchitecture(string $need): string
-    {
-        return match($need) {
-            'scalability' => 'Microservices with Docker & K8s',
-            'performance' => 'Optimized APIs with caching layers',
-            'organization' => 'Monorepo with shared libraries',
-            default => 'Well-structured Monolith with extractable services'
-        };
-    }
-}
-
-readonly class FrontendCraftsman
-{
-    public function getPreferredStack(): array
-    {
-        return [
-            'frameworks' => ['Vue.js', 'React', 'Alpine.js'],
-            'styling' => ['SASS/SCSS', 'Modern CSS3', 'TailwindCSS', 'CSS Grid/Flexbox'],
-            'philosophy' => 'User experience > fancy animations'
-        ];
-    }
-}
-
-readonly class DevOpsEngineer
-{
-    public function getWorkflow(): array
-    {
-        return [
-            'containers' => 'Docker + Kubernetes',
-            'cicd' => 'GitLab CI/CD + GitHub Actions',
-            'cloud' => 'AWS/GCP with infrastructure as code',
-            'monitoring' => 'Performance metrics & error tracking'
-        ];
-    }
-}
 
 readonly class AIIntegrator
 {
@@ -215,8 +143,10 @@ $svetoslav = new readonly class (
         private(set) DateTimeImmutable $availability,
     ) {}
 };
-// ...
+// Full source: profile-generator.php
 ```
+
+</details>
 
 ## 📊 GitHub Stats
 
