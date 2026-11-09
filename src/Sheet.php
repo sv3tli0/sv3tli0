@@ -9,12 +9,23 @@ abstract class Sheet
 
     protected const float INNER = 24;
 
+    /** Non-empty when the sheet is inlined into the site: scopes ids and styles, adds interaction hooks. */
+    protected string $prefix = '';
+
     /** @param array<string, mixed> $config */
     public function __construct(
         protected readonly Palette $p,
         protected readonly Fonts $fonts,
         protected readonly array $config,
     ) {}
+
+    public function inline(string $prefix): static
+    {
+        $copy = clone $this;
+        $copy->prefix = $prefix;
+
+        return $copy;
+    }
 
     abstract public function slug(): string;
 
@@ -33,9 +44,35 @@ abstract class Sheet
         return '';
     }
 
+    protected function keyframes(): string
+    {
+        return '';
+    }
+
     protected function defs(): string
     {
         return '';
+    }
+
+    protected function site(): bool
+    {
+        return $this->prefix !== '';
+    }
+
+    protected function id(string $name): string
+    {
+        return $this->prefix . $name;
+    }
+
+    protected function url(string $name): string
+    {
+        return 'url(#' . $this->prefix . $name . ')';
+    }
+
+    /** Extra attributes that only the interactive site needs. */
+    protected function hook(string $attributes): string
+    {
+        return $this->site() ? ' ' . $attributes : '';
     }
 
     public function render(): string
@@ -46,20 +83,29 @@ abstract class Sheet
         $i = self::INNER;
         $iw = $w - 2 * $i;
         $ih = $h - 2 * $i;
+        $keyframes = '@keyframes draw{from{stroke-dashoffset:1}}@keyframes fade{from{opacity:0}}' . $this->keyframes();
+        $rules = $this->baseCss() . $this->css();
+        // Inlined sheets share one document, so their rules are nested under the sheet's own id.
+        $style = $this->site()
+            ? $keyframes . '#' . $this->id('svg') . '{' . $rules . '}'
+            : $this->fonts->css . $keyframes . $rules;
+        $root = $this->site()
+            ? 'id="' . $this->id('svg') . '" class="sheet" data-sheet="' . $this->slug() . '" role="group"'
+            : 'width="' . $w . '" height="' . $h . '" role="img"';
 
         return <<<SVG
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 $w $h" width="$w" height="$h" role="img" aria-label="{$this->esc($this->label())}">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 $w $h" $root aria-label="{$this->esc($this->label())}">
             <title>{$this->esc($this->label())}</title>
-            <style>{$this->fonts->css}{$this->baseCss()}{$this->css()}</style>
+            <style>$style</style>
             <defs>
-            <pattern id="gm" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" fill="none" stroke="{$p->gridMinor}" stroke-width=".6"/></pattern>
-            <pattern id="gM" width="50" height="50" patternUnits="userSpaceOnUse" x="$i" y="$i"><rect width="50" height="50" fill="url(#gm)"/><path d="M50 0H0V50" fill="none" stroke="{$p->gridMajor}" stroke-width=".8"/></pattern>
-            <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L10 5L0 9z" fill="{$p->ink}"/></marker>
-            <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L10 5L0 9z" fill="{$p->red}"/></marker>
+            <pattern id="{$this->id('gm')}" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" fill="none" stroke="{$p->gridMinor}" stroke-width=".6"/></pattern>
+            <pattern id="{$this->id('gM')}" width="50" height="50" patternUnits="userSpaceOnUse" x="$i" y="$i"><rect width="50" height="50" fill="{$this->url('gm')}"/><path d="M50 0H0V50" fill="none" stroke="{$p->gridMajor}" stroke-width=".8"/></pattern>
+            <marker id="{$this->id('ar')}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L10 5L0 9z" fill="{$p->ink}"/></marker>
+            <marker id="{$this->id('arr')}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L10 5L0 9z" fill="{$p->red}"/></marker>
             {$this->defs()}
             </defs>
             <rect width="$w" height="$h" rx="6" fill="{$p->paper}"/>
-            <rect x="$i" y="$i" width="$iw" height="$ih" fill="url(#gM)"/>
+            <rect x="$i" y="$i" width="$iw" height="$ih" fill="{$this->url('gM')}"/>
             {$this->frame($w, $h)}
             {$this->body()}
             </svg>
@@ -83,7 +129,6 @@ abstract class Sheet
             . ".fn{fill:none;stroke:{$p->muted};stroke-width:.8}"
             . ".rd{fill:none;stroke:{$p->red};stroke-width:2;stroke-linecap:round;stroke-linejoin:round}"
             . ".pp{fill:{$p->paper}}"
-            . '@keyframes draw{from{stroke-dashoffset:1}}@keyframes fade{from{opacity:0}}'
             . '@media (prefers-reduced-motion:reduce){*{animation:none!important}.pk{display:none}}';
     }
 

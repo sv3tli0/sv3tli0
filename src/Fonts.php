@@ -7,15 +7,15 @@ use RuntimeException;
 /** SVGs rendered through <img> cannot fetch web fonts, so the subsets are inlined. */
 final readonly class Fonts
 {
-    private const array FACES = [
+    public const array FACES = [
         ['Barlow', 400, 'BarlowSemiCondensed-Regular.woff2'],
         ['Barlow', 600, 'BarlowSemiCondensed-SemiBold.woff2'],
         ['Caveat', 500, 'Caveat.woff2'],
     ];
 
-    public string $css;
+    private function __construct(public string $css) {}
 
-    public function __construct(string $dir)
+    public static function embedded(string $dir): self
     {
         $css = '';
         foreach (self::FACES as [$family, $weight, $file]) {
@@ -26,6 +26,13 @@ final readonly class Fonts
             $css .= "@font-face{font-family:$family;font-weight:$weight;src:url(data:font/woff2;base64,"
                 . base64_encode($bytes) . ") format('woff2')}";
         }
-        $this->css = $css;
+
+        return new self($css);
+    }
+
+    /** For sheets inlined into a page that already loads the fonts. */
+    public static function none(): self
+    {
+        return new self('');
     }
 }

@@ -98,10 +98,8 @@ require __DIR__ . '/src/functions.php';
 
 use Profile\Data\ContributionCalendar;
 use Profile\Fonts;
-use Profile\Sheets\CrewSheet;
-use Profile\Sheets\HeroSheet;
-use Profile\Sheets\SkylineSheet;
-use Profile\Sheets\StackSheet;
+use Profile\SheetSet;
+use Profile\Site;
 use Profile\Theme;
 
 $config = require __DIR__ . '/config/profile.php';
@@ -135,7 +133,7 @@ if ($token !== null) {
     fwrite(STDERR, '⚠️  No GITHUB_TOKEN, skipping the skyline. Try: GITHUB_TOKEN=$(gh auth token) php profile-generator.php' . PHP_EOL);
 }
 
-$fonts = new Fonts(__DIR__ . '/assets/fonts');
+$fonts = Fonts::embedded(__DIR__ . '/assets/fonts');
 $dist = __DIR__ . '/dist';
 if (! is_dir($dist) && ! mkdir($dist, 0o755, true)) {
     fwrite(STDERR, "❌ Cannot create $dist" . PHP_EOL);
@@ -143,18 +141,12 @@ if (! is_dir($dist) && ! mkdir($dist, 0o755, true)) {
 }
 
 foreach (Theme::cases() as $theme) {
-    $palette = $theme->palette();
-    $sheets = [
-        new HeroSheet($palette, $fonts, $config, $today),
-        new CrewSheet($palette, $fonts, $config),
-        new StackSheet($palette, $fonts, $config),
-    ];
-    if ($calendar !== null) {
-        $sheets[] = new SkylineSheet($palette, $fonts, $config, $calendar, $today);
-    }
-    foreach ($sheets as $sheet) {
+    foreach (SheetSet::build($theme->palette(), $fonts, $config, $today, $calendar) as $sheet) {
         $file = "$dist/{$sheet->slug()}-{$theme->value}.svg";
         file_put_contents($file, $sheet->render());
         echo '✅ ' . basename($file) . ' (' . number_format(filesize($file) / 1024, 1) . ' KB)' . PHP_EOL;
     }
 }
+
+(new Site($config, $today, $calendar, __DIR__))->build($dist);
+echo '✅ index.html (' . number_format(filesize("$dist/index.html") / 1024, 1) . ' KB)' . PHP_EOL;

@@ -98,22 +98,22 @@ final class HeroSheet extends Sheet
         ];
         $out = '';
         foreach ($wires as $id => [$d, $delay]) {
-            $out .= "<path id=\"$id\" d=\"$d\" pathLength=\"1\" class=\"ln w\" marker-end=\"url(#ar)\" style=\"animation-delay:{$delay}s\"/>";
+            $out .= "<path id=\"{$this->id($id)}\" d=\"$d\" pathLength=\"1\" class=\"ln w\" marker-end=\"{$this->url('ar')}\" style=\"animation-delay:{$delay}s\"/>";
         }
 
         $out .= $this->node(0.0, '<path d="' . Hand::circle(525, 120, 22, 3) . '" class="rd" pathLength="1"/>'
             . '<text x="525" y="126" text-anchor="middle" class="b" font-size="15" style="fill:' . $this->p->red . '">SM</text>'
-            . '<text x="525" y="166" text-anchor="middle" class="hd" font-size="22">me</text>');
-        $out .= $this->node(0.3, $this->bubble(615, 120, 'EX') . '<text x="615" y="160" text-anchor="middle" font-size="13.5">Explore</text>');
-        $out .= $this->node(0.55, $this->bubble(705, 120, 'PL') . '<text x="705" y="160" text-anchor="middle" font-size="13.5">Plan</text>');
+            . '<text x="525" y="166" text-anchor="middle" class="hd" font-size="22">me</text>', 'SM');
+        $out .= $this->node(0.3, $this->bubble(615, 120, 'EX') . '<text x="615" y="160" text-anchor="middle" font-size="13.5">Explore</text>', 'EX');
+        $out .= $this->node(0.55, $this->bubble(705, 120, 'PL') . '<text x="705" y="160" text-anchor="middle" font-size="13.5">Plan</text>', 'PL');
         foreach ([['LA', 178, 'lara'], ['FR', 250, 'fronty'], ['DS', 322, 'designer']] as $k => [$tag, $y, $name]) {
             $out .= $this->node(0.95 + $k * 0.08, $this->bubble(790, $y, $tag)
-                . '<text x="814" y="' . ($y - 24) . '" font-size="13.5">' . $name . '</text>');
+                . '<text x="814" y="' . ($y - 24) . '" font-size="13.5">' . $name . '</text>', $tag);
         }
-        $out .= $this->node(1.35, $this->bubble(925, 250, 'CR') . '<text x="968" y="219" text-anchor="end" font-size="13.5">code-reviewer</text>');
-        $out .= '<rect x="880" y="388" width="90" height="25" rx="12.5" class="ln pp nd" style="animation-delay:1.85s"/>'
-            . '<rect id="shipflash" x="880" y="388" width="90" height="25" rx="12.5" fill="' . $this->p->ink . '" opacity="0"/>'
-            . '<text x="925" y="405.5" text-anchor="middle" font-size="14" class="nd" style="animation-delay:1.85s">production</text>';
+        $out .= $this->node(1.35, $this->bubble(925, 250, 'CR') . '<text x="968" y="219" text-anchor="end" font-size="13.5">code-reviewer</text>', 'CR');
+        $out .= '<g' . $this->hook('data-node="ship"') . '><rect x="880" y="388" width="90" height="25" rx="12.5" class="ln pp nd" style="animation-delay:1.85s"/>'
+            . '<rect id="' . $this->id('shipflash') . '" x="880" y="388" width="90" height="25" rx="12.5" fill="' . $this->p->ink . '" opacity="0"/>'
+            . '<text x="925" y="405.5" text-anchor="middle" font-size="14" class="nd" style="animation-delay:1.85s">production</text></g>';
 
         $out .= $this->redMarks();
 
@@ -128,7 +128,7 @@ final class HeroSheet extends Sheet
             . '<text x="742" y="92" class="hd nd" font-size="19" style="animation-delay:1.1s">ok</text>'
             . '<circle cx="925" cy="345" r="17" class="pp"/>'
             . $mark(Hand::circle(925, 345, 17, 11), 1.5)
-            . $mark(Hand::check(922, 353, 16), 1.75, ' id="gate"')
+            . $mark(Hand::check(922, 353, 16), 1.75, ' id="' . $this->id('gate') . '"' . $this->hook('data-node="gate"'))
             . '<path d="' . Hand::arrow(906, 356, 757, 328, -0.32) . '" class="rd" stroke-dasharray="4 5" style="animation:fade .6s 2s backwards"/>'
             . '<text x="872" y="401" text-anchor="end" class="hd nd" font-size="19" style="animation-delay:2.1s">my review: not yet? back to the crew</text>';
     }
@@ -146,14 +146,14 @@ final class HeroSheet extends Sheet
         $out = '';
         foreach ($runs as [$wire, $from, $to]) {
             $out .= '<circle r="3.8" class="pk" opacity="0">'
-                . "<animateMotion $timing calcMode=\"linear\" keyPoints=\"0;0;1;1\" keyTimes=\"0;$from;$to;1\"><mpath xlink:href=\"#$wire\"/></animateMotion>"
+                . "<animateMotion $timing calcMode=\"linear\" keyPoints=\"0;0;1;1\" keyTimes=\"0;$from;$to;1\"><mpath xlink:href=\"#{$this->id($wire)}\"/></animateMotion>"
                 . "<animate attributeName=\"opacity\" $timing calcMode=\"discrete\" values=\"0;1;0\" keyTimes=\"0;$from;$to\"/>"
                 . '</circle>';
         }
 
         return $out
-            . "<animate xlink:href=\"#gate\" attributeName=\"stroke-width\" $timing values=\"2;2;4;2;2\" keyTimes=\"0;.55;.58;.62;1\"/>"
-            . "<animate xlink:href=\"#shipflash\" attributeName=\"opacity\" $timing values=\"0;0;.35;0;0\" keyTimes=\"0;.7;.73;.82;1\"/>";
+            . "<animate xlink:href=\"#{$this->id('gate')}\" attributeName=\"stroke-width\" $timing values=\"2;2;4;2;2\" keyTimes=\"0;.55;.58;.62;1\"/>"
+            . "<animate xlink:href=\"#{$this->id('shipflash')}\" attributeName=\"opacity\" $timing values=\"0;0;.35;0;0\" keyTimes=\"0;.7;.73;.82;1\"/>";
     }
 
     private function ruleOfTheDay(): string
@@ -161,7 +161,7 @@ final class HeroSheet extends Sheet
         $rules = $this->config['rules'];
         $rule = $rules[(int) $this->today->format('z') % count($rules)];
 
-        return '<text x="962" y="58" text-anchor="end" class="hd" font-size="20">rule of the day: ' . e($rule) . '</text>';
+        return '<text x="962" y="58" text-anchor="end" class="hd" font-size="20"' . $this->hook('data-rule tabindex="0" role="button" aria-label="Show the next rule"') . '>rule of the day: ' . e($rule) . '</text>';
     }
 
     private function block(): string
@@ -183,8 +183,11 @@ final class HeroSheet extends Sheet
         ]);
     }
 
-    private function node(float $delay, string $inner): string
+    private function node(float $delay, string $inner, string $tag): string
     {
-        return "<g class=\"nd\" style=\"animation-delay:{$delay}s\">$inner</g>";
+        $name = $this->config['crew']['lanes'][$tag][0];
+        $hook = $this->hook("data-node=\"$tag\" data-agent=\"$tag\" tabindex=\"0\" role=\"button\" aria-label=\"" . e("$name: open the spec card") . '"');
+
+        return "<g class=\"nd\" style=\"animation-delay:{$delay}s\"$hook>$inner</g>";
     }
 }

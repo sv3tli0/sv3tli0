@@ -81,11 +81,15 @@ final class SkylineSheet extends Sheet
         $p = $this->p;
 
         return ".bd{transform-box:fill-box;transform-origin:50% 100%;animation:rise .7s cubic-bezier(.2,.7,.3,1) backwards}"
-            . '@keyframes rise{from{transform:scaleY(0)}}'
             . ".fr{fill:{$p->mix(0.14)}}.sd{fill:{$p->mix(0.32)}}.tp{fill:{$p->mix(0.55)}}"
             . ".city{stroke:{$p->ink};stroke-width:.6;stroke-linejoin:round}"
             . ".lot{fill:none;stroke:{$p->muted};stroke-width:.5;opacity:.55}"
             . '.nt{animation:fade .6s 2.4s backwards}';
+    }
+
+    protected function keyframes(): string
+    {
+        return '@keyframes rise{from{transform:scaleY(0)}}';
     }
 
     protected function body(): string
@@ -133,7 +137,7 @@ final class SkylineSheet extends Sheet
                 continue;
             }
             $delay = n($day['week'] * 0.035 + (6 - $day['weekday']) * 0.03);
-            $out .= "<g class=\"bd\" style=\"animation-delay:{$delay}s\">"
+            $out .= "<g class=\"bd\" style=\"animation-delay:{$delay}s\"" . $this->hook("data-d=\"{$day['date']}\" data-c=\"{$day['count']}\"") . '>'
                 . '<rect class="fr" x="' . n($x) . '" y="' . n($top) . '" width="' . n($w) . '" height="' . n($h) . '"/>'
                 . '<path class="sd" d="M' . n($x + $w) . ' ' . n($y) . 'l' . n($vx) . ' ' . n($vy) . 'v' . n(-$h) . 'l' . n(-$vx) . ' ' . n(-$vy) . 'z"/>'
                 . '<path class="tp" d="' . $roof . '"/></g>';

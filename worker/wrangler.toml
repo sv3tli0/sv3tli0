@@ -1,0 +1,11 @@
+name = "work-orders"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://sv3tli0.github.io"
+GITHUB_REPO = "sv3tli0/inbox"
+
+# Secrets, set once with `npx wrangler secret put <NAME>`:
+#   GITHUB_TOKEN      fine-grained token, Issues: read and write on sv3tli0/inbox only
+#   TURNSTILE_SECRET  secret key of the Turnstile widget

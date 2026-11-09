@@ -5,6 +5,8 @@
 
 <div align="center">
 
+[![Interactive version](https://img.shields.io/badge/Interactive_version-12355C?style=for-the-badge&logo=githubpages&logoColor=white)](https://sv3tli0.github.io/sv3tli0/)
+[![Work order](https://img.shields.io/badge/Work_order-C8402F?style=for-the-badge&logo=maildotru&logoColor=white)](https://sv3tli0.github.io/sv3tli0/#request)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/svetoslav-mutev/)
 [![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/sv3tli0)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:svetoslav.mutev@gmail.com)

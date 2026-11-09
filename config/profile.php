@@ -24,15 +24,22 @@ return [
             ['Review', '/review'],
             ['Ship', '/commit  /deploy'],
         ],
-        // tag => [name, what it does, is human]
+        // tag => [name, what it does, is human, spec card text]
         'lanes' => [
-            'SM' => ['S. Mutev', 'architect, final say', true],
-            'EX' => ['Explore', 'maps the codebase', false],
-            'PL' => ['Plan', 'splits work into tracks', false],
-            'LA' => ['lara', 'Laravel APIs, queues', false],
-            'FR' => ['fronty', 'Vue + Inertia screens', false],
-            'DS' => ['designer', 'Tailwind v4 UI', false],
-            'CR' => ['code-reviewer', 'security, quality', false],
+            'SM' => ['S. Mutev', 'architect, final say', true,
+                'Writes the brief, approves the plan and makes the final call. Nothing reaches production without passing through me.'],
+            'EX' => ['Explore', 'maps the codebase', false,
+                'A read-only scout. Sweeps the codebase first, so the plan starts from what is really there and not from guesses.'],
+            'PL' => ['Plan', 'splits work into tracks', false,
+                'Turns a request into steps and parallel tracks, names the files that matter and flags the risky parts.'],
+            'LA' => ['lara', 'Laravel APIs, queues', false,
+                'Laravel API specialist: migrations, queues, auth and Pest tests, Docker-first, with atomic commits.'],
+            'FR' => ['fronty', 'Vue + Inertia screens', false,
+                'Builds the Vue and Inertia screens on top of the API, with Tailwind and typed props end to end.'],
+            'DS' => ['designer', 'Tailwind v4 UI', false,
+                'Design systems and UI polish with Vue 3 and Tailwind v4: tokens, components, dark mode and accessibility.'],
+            'CR' => ['code-reviewer', 'security, quality', false,
+                'Reviews every change for security, performance and maintainability before it ever reaches my desk.'],
         ],
         // id => [lane, stage index, label]
         'steps' => [
@@ -70,6 +77,27 @@ return [
     'foundation' => ['PHP, from 5.2 to 8.5', 'The foundation, poured in 2012', 'concrete'],
     'walls' => ['Pest, Larastan, Vitest', 'The walls: every floor is tested'],
     'crane' => ['Claude Code + subagents', 'Codex, Cursor', 'Laravel Boost, MCP servers', 'Skills and hooks'],
+
+    'contact' => [
+        'email' => 'svetoslav.mutev@gmail.com',
+        'linkedin' => 'https://www.linkedin.com/in/svetoslav-mutev/',
+        'x' => 'https://x.com/sv3tli0',
+        'github' => 'https://github.com/sv3tli0',
+    ],
+    'site' => 'https://sv3tli0.github.io/sv3tli0/',
+
+    // Work orders and contact requests from the site. Empty endpoint = the form falls back to email.
+    'tickets' => [
+        'endpoint' => '',
+        'turnstile' => '',
+        'kinds' => [
+            'project' => 'New product or project',
+            'contract' => 'Contract work in your team',
+            'agents' => 'Agent workflow setup or consulting',
+            'contact' => 'Just get in touch',
+        ],
+        'timelines' => ['As soon as possible', 'Within a month', 'This quarter', 'Just exploring'],
+    ],
 
     // One shows on the hero each day.
     'rules' => [
