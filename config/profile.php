@@ -88,7 +88,7 @@ return [
 
     // Work orders and contact requests from the site. Empty endpoint = the form falls back to email.
     'tickets' => [
-        'endpoint' => '',
+        'endpoint' => 'https://work-orders.svetoslav-mutev.workers.dev',
         'turnstile' => '',
         'kinds' => [
             'project' => 'New product or project',
