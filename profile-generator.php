@@ -9,7 +9,7 @@
 readonly class BackendArchitect
 {
     public function __construct(
-        private(set) array $frameworks = ['Laravel 13', 'Symfony 7', 'Node.js'],
+        private(set) array $frameworks = ['Laravel 13', 'Symfony 8', 'Filament 5', 'Node.js'],
         private(set) array $databases = ['MySQL', 'PostgreSQL', 'Redis'],
     ) {}
 
@@ -29,7 +29,7 @@ readonly class FrontendCraftsman
     public function getPreferredStack(): array
     {
         return [
-            'frameworks' => ['Vue 3', 'Nuxt 4', 'Inertia', 'Quasar', 'Tauri 2'],
+            'frameworks' => ['Vue 3.5', 'Nuxt 4', 'Inertia', 'Quasar', 'Tauri 2', 'React 19'],
             'styling' => ['TailwindCSS v4', 'Modern CSS'],
             'philosophy' => 'User experience > fancy animations'
         ];

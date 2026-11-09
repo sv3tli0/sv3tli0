@@ -46,6 +46,7 @@ final class StackSheet extends Sheet
         $layers = array_map(static fn (array $l): string => $l[0], [...$this->config['stack'], $this->config['foundation']]);
 
         return 'Stack as a building section, top to bottom: ' . implode('; ', $layers)
+            . '. Load-bearing walls: ' . $this->config['walls'][0]
             . '. The crane building it: ' . implode(', ', $this->config['crane']) . '.';
     }
 
@@ -154,7 +155,7 @@ final class StackSheet extends Sheet
             . '<path d="' . Hand::arrow(150, 214, 203, 182, 0.22) . '" class="rd" stroke-width="1.6"/>'
             . '<text x="56" y="226" class="hd" font-size="19">me, at the controls</text>'
             . '<text x="56" y="300" class="b" font-size="15">The crane</text>'
-            . $this->lines(56, 322, 13.5, 20, $this->config['crane'])
+            . $this->lines(56, 322, 13, 20, $this->config['crane'])
             . '<path d="M200 316H222" class="ln" stroke-width="1"/><circle cx="222" cy="316" r="2" fill="' . $this->p->ink . '"/>';
     }
 
@@ -173,7 +174,14 @@ final class StackSheet extends Sheet
                 . '<text x="660" y="' . n($mid + 15) . '" class="m" font-size="12.5">' . e($why) . '</text>';
         }
 
-        return $out;
+        [$what, $why] = $this->config['walls'];
+        $wall = self::RIGHT + 3;
+        $y = $this->top() + 6;
+
+        return $out . '<circle cx="' . $wall . '" cy="' . n($y) . '" r="2.6" fill="' . $this->p->paper . '" stroke="' . $this->p->ink . '" stroke-width="1.2"/>'
+            . '<path d="M' . ($wall + 2) . ' ' . n($y - 2) . 'L638 ' . n($y - 40) . 'H652" class="ln" stroke-width="1"/>'
+            . '<text x="660" y="' . n($y - 41) . '" class="b" font-size="15.5">' . e($what) . '</text>'
+            . '<text x="660" y="' . n($y - 25) . '" class="m" font-size="12.5">' . e($why) . '</text>';
     }
 
     /** @param list<string> $lines */

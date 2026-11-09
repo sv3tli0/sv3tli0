@@ -33,19 +33,20 @@ the agents explore, plan, build and review in parallel, and nothing ships until 
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sv3tli0/sv3tli0/output/stack-dark.svg">
-  <img alt="My stack as a building section. Foundation: PHP since 2012. Floors: Laravel 13 and Symfony 7; MySQL, PostgreSQL, Redis and queues; Docker, Octane, FrankenPHP and CI/CD; Vue 3, Inertia, Nuxt 4 and Tailwind v4; Quasar and Tauri 2. The crane: Claude Code with subagents, Codex, Cursor and MCP servers." src="https://raw.githubusercontent.com/sv3tli0/sv3tli0/output/stack-light.svg" width="100%">
+  <img alt="My stack as a building section. Foundation: PHP since 2012. Floors: Laravel 13, Symfony 8 and Filament 5; MySQL, PostgreSQL and Redis with Horizon, Reverb and Scout; Docker, Octane, FrankenPHP and CI/CD; Vue 3.5, Nuxt 4, Inertia and Tailwind v4; Quasar and Tauri 2. Walls: Pest, Larastan and Vitest. The crane: Claude Code with subagents, Codex, Cursor, Laravel Boost and MCP servers." src="https://raw.githubusercontent.com/sv3tli0/sv3tli0/output/stack-light.svg" width="100%">
 </picture>
 
 <details>
 <summary><b>The stack as plain text</b></summary>
 
-| Back end | Front end & apps | Delivery | AI & agents |
+| Back end | Front end & apps | Delivery & quality | AI & agents |
 |:---|:---|:---|:---|
-| PHP 5.2 → 8.5 | Vue 3, Nuxt 4, Inertia | Docker, Kubernetes | Claude Code + subagents |
-| Laravel 5 → 13 | Quasar, Tauri 2 | GitHub Actions, GitLab CI | Codex, Cursor |
-| Symfony 2 → 7 | React, Alpine.js | Octane + FrankenPHP | MCP servers, skills, hooks |
-| Node.js | Tailwind v4, modern CSS | AWS, GCP | Anthropic & OpenAI APIs |
-| MySQL, PostgreSQL, Redis | TypeScript | Linux servers | n8n custom nodes |
+| PHP 5.2 → 8.5 | Vue 3.5, Nuxt 4, Inertia | Docker, Kubernetes | Claude Code + subagents |
+| Laravel 5 → 13 | Quasar, Tauri 2 | Octane + FrankenPHP | Codex, Cursor |
+| Symfony 2 → 8 | React 19, Alpine.js | GitHub Actions, GitLab CI | Laravel Boost, MCP servers |
+| Filament 5, Cashier + Stripe | Tailwind v4, Vite 8 | AWS, GCP, Linux servers | Skills, hooks, workflows |
+| Horizon, Reverb, Scout | TypeScript, Pinia | Pest, Larastan, Vitest | Anthropic & OpenAI APIs |
+| MySQL, PostgreSQL, Redis | Directus (headless CMS) | Rust (Actix) services | n8n custom nodes |
 
 </details>
 

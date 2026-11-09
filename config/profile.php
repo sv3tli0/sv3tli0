@@ -56,19 +56,20 @@ return [
             ['pest', 'rev'], ['e2e', 'rev'], ['kit', 'rev'],
             ['rev', 'call'], ['call', 'ship'],
         ],
-        'toolbox' => 'Codex, Cursor, MCP servers, hooks and 22 custom skills.',
+        'toolbox' => 'Codex, Cursor, Laravel Boost, MCP servers, hooks and 22 custom skills.',
     ],
 
     // Section drawing, top floor first. [what, why, hatch: steel|cross|lines|dots|slant|concrete]
     'stack' => [
-        ['Quasar, Tauri 2', 'Apps for iOS, Android and desktop', 'slant'],
-        ['Vue 3, Inertia, Nuxt 4, Tailwind v4', 'The web front, React when asked', 'dots'],
-        ['Docker, Octane + FrankenPHP, CI/CD', 'Runtime and delivery, AWS and GCP', 'lines'],
-        ['MySQL, PostgreSQL, Redis, queues', 'Data and services', 'cross'],
-        ['Laravel 13, Symfony 7', 'Frameworks', 'steel'],
+        ['Quasar, Tauri 2', 'iOS, Android, desktop and web from one codebase', 'slant'],
+        ['Vue 3.5, Nuxt 4, Inertia, Tailwind v4', 'Vite 8, TypeScript, Pinia; React 19 when asked', 'dots'],
+        ['Docker, Octane + FrankenPHP, CI/CD', 'GitHub Actions, GitLab CI, AWS and GCP', 'lines'],
+        ['MySQL, PostgreSQL, Redis', 'Horizon queues, Reverb websockets, Scout search', 'cross'],
+        ['Laravel 13, Symfony 8, Filament 5', 'Frameworks, admin panels, Cashier + Stripe', 'steel'],
     ],
     'foundation' => ['PHP, from 5.2 to 8.5', 'The foundation, poured in 2012', 'concrete'],
-    'crane' => ['Claude Code + subagents', 'Codex, Cursor', 'MCP servers, skills, hooks'],
+    'walls' => ['Pest, Larastan, Vitest', 'The walls: every floor is tested'],
+    'crane' => ['Claude Code + subagents', 'Codex, Cursor', 'Laravel Boost, MCP servers', 'Skills and hooks'],
 
     // One shows on the hero each day.
     'rules' => [
