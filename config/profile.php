@@ -84,7 +84,7 @@ return [
         'x' => 'https://x.com/sv3tli0',
         'github' => 'https://github.com/sv3tli0',
     ],
-    'site' => 'https://sv3tli0.github.io/sv3tli0/',
+    'site' => 'https://sv3tli0.github.io/',
 
     // Work orders and contact requests from the site. Empty endpoint = the form falls back to email.
     'tickets' => [
